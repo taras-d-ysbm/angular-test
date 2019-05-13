@@ -1,0 +1,30 @@
+// Global Overrides and Added Styles
+
+// Check the _settings.scss variables file first to see if you're covered there before creating a global override!
+
+// Feel free to edit or remove most/all of these styles to make it your own. Add one-off styles to the component's own SCSS file.
+
+// @import './settings';
+
+// Base Styles
+// -------------------------------
+
+
+.top-bar {
+  background-color: $black;
+  color: $white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  ul {
+    background-color: $black;
+
+    li {
+      a {
+        background-color: $black !important
+      }
+    }
+  }
+}
