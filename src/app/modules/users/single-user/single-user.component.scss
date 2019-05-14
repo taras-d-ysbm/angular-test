@@ -1,0 +1,16 @@
+.media-object {
+  -webkit-box-shadow: 6px -4px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 6px -4px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 6px -4px 5px 0px rgba(0, 0, 0, 0.75);
+  //   background-color: rgb(255, 170, 220);
+  border: 1px solid grey
+}
+
+.main-section {
+  div {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 30px;
+    align-content: center;
+  }
+}

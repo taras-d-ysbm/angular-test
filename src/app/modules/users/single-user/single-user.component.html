@@ -1,0 +1,44 @@
+<div class="media-object">
+  <div class="media-object-section">
+    <div class="thumbnail">
+      <img src={{image}}>
+    </div>
+  </div>
+  <div *ngIf="!editing" class="media-object-section main-section">
+    <div>
+      <h4>{{first_name}} {{last_name}}</h4>
+      <!-- <button (click)="userEdited()" class="button small">Edit</button> -->
+      <button (click)="toggleEdit()" class="button small">Edit</button>
+    </div>
+    <h6>{{email}}</h6>
+  </div>
+  <div *ngIf="editing" class="media-object-section main-section">
+    <!-- <div>
+      <h4>{{first_name}} {{last_name}}</h4>
+      <button (click)="userEdited()" class="button small">Edit</button>
+    </div>
+    <h6>{{email}}</h6> -->
+    <div class="grid-x">
+      <div class="medium-4 cell">
+        <label>First Name
+          <input type="text" value="{{first_name}}" [formControl]="firstName" placeholder="First Name">
+        </label>
+      </div>
+      <div class="medium-4 cell">
+        <label>Last Name
+          <input type="text" value="{{last_name}}" [formControl]="lastName" placeholder="Last Name">
+        </label>
+
+      </div>
+      <div class="medium-2 cell">
+        <button (click)="userEdited()" class="button small">Save</button>
+        <button (click)="toggleEdit()" class="button small">Cancel</button>
+      </div>
+      <div class="medium-4 cell">
+        <label>Email
+          <input type="text" value="{{email}}" [formControl]="emailControl" placeholder="Email">
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
