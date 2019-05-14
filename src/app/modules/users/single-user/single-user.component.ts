@@ -12,10 +12,12 @@ import { FormControl } from '@angular/forms';
 export class SingleUserComponent {
   editing: boolean = false
 
-  @Input() first_name: string
-  @Input() last_name: string
-  @Input() image: string
-  @Input() email: string
+  // @Input() first_name: string
+  // @Input() last_name: string
+  // @Input() image: string
+  // @Input() email: string
+
+  @Input() user
 
   @Output() editUser = new EventEmitter()
 
@@ -28,18 +30,19 @@ export class SingleUserComponent {
   }
 
   save() {
-    console.log(this.first_name)
+    console.log(this.user.first_name)
   }
 
   userEdited() {
     const user = {
-      first_name: this.firstName.value ? this.firstName.value : this.first_name,
-      last_name: this.lastName.value ? this.lastName.value : this.last_name,
-      email: this.emailControl.value ? this.emailControl.value : this.email
+      first_name: this.firstName.value ? this.firstName.value : this.user.first_name,
+      last_name: this.lastName.value ? this.lastName.value : this.user.last_name,
+      email: this.emailControl.value ? this.emailControl.value : this.user.email,
+      id: this.user.id
     }
-    this.first_name = this.firstName.value ? this.firstName.value : this.first_name
-    this.last_name = this.lastName.value ? this.lastName.value : this.last_name
-    this.email = this.emailControl.value ? this.emailControl.value : this.email
+    this.user.first_name = this.firstName.value ? this.firstName.value : this.user.first_name
+    this.user.last_name = this.lastName.value ? this.lastName.value : this.user.last_name
+    this.user.email = this.emailControl.value ? this.emailControl.value : this.user.email
     this.editUser.emit(user)
     this.toggleEdit()
   }

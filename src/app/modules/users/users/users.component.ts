@@ -20,9 +20,9 @@ export class UsersComponent implements OnInit {
     })
   }
 
-  displayUser(user, id) {
-    console.log(user, id)
-    this.http.put(`https://reqres.in/api/users/${id}`, { user }).subscribe(res => console.log(res))
+  displayUser(user) {
+    console.log(user)
+    this.http.put(`https://reqres.in/api/users/${user.id}`, { user }).subscribe(res => console.log(res))
   }
 
 }

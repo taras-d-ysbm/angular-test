@@ -1,5 +1,4 @@
 <h1>Users</h1>
 <div *ngIf="users">
-  <app-single-user (editUser)="displayUser($event, user.id)" *ngFor="let user of users" [first_name]="user.first_name"
-    [last_name]="user.last_name" [email]="user.email" [image]="user.avatar"></app-single-user>
+  <app-single-user (editUser)="displayUser($event)" *ngFor="let user of users" [user]="user"></app-single-user>
 </div>
